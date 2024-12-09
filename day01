@@ -1,0 +1,31 @@
+        try:
+            retweet_button = driver.find_element(By.XPATH,"//*[@data-testid='retweet']/div").click()  # retweet button
+            # retweet_button = driver.find_element_by_xpath("//div[@data-testid='retweet']/div").click()
+            time.sleep(1)  # retweet button
+
+            retweet_button = driver.find_element(By.XPATH,
+                "//div[@data-testid='retweetConfirm']/div").click()  # retweet click #confirm
+            time.sleep(2)  # click on retweet button 
+
+            like_button = driver.find_element(By.XPATH,"//button[@data-testid='like']")  # like button
+            like_button.click()  # click on like button
+
+            time.sleep(2)
+
+            comment_button = driver.find_element(By.CSS_SELECTOR,"div[data-testid='reply']")
+            comment_button.click()  # click on comment button
+
+            time.sleep(1)
+
+            send_button = driver.find_element(By.CLASS_NAME, 'public-DraftStyleDefault-ltr')
+            send_button.send_keys(random.choice(commentsDict))  # randomly send the comment
+
+            time.sleep(1)
+
+            reply_button = driver.find_element(By.XPATH,"//div[@data-testid='tweetButton']")
+            reply_button.click()  # click on reply button
+
+            time.sleep(3)
+
+        except Exception as e:
+            print("An error occurred:", e)'''
